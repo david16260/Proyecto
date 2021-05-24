@@ -16,6 +16,7 @@
        <nav>
         <ul>
             <li><a href="registrarUsuario.jsp" class="btn-bk">Registrar usuario</a></li>
+            <li><a href="consultarVehiculo.jsp" class="btn-bk">Consultar vehiculo</a></li>
             <li><a href="index.jsp" class="btn-bk">Cerrar sesión</a></li>
           </ul>
       </nav>

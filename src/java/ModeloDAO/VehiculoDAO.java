@@ -85,15 +85,15 @@ public class VehiculoDAO extends Conexion implements Crud{
     @Override
     public boolean actualizarRegistro() {
         try {
-            sql = "update  vehiculo set DATID=?, CATID=?, VEHMODELO=?, VEHMARCA=?, VEHESTADO=?, VEHPRECIO=? where VEHPLACA=?";
+            sql = "update vehiculo set DATID=?, CATID=?, VEHMODELO=?, VEHMARCA=?, VEHESTADO=?, VEHPRECIO=? where VEHPLACA=?";
             puente = conexion.prepareStatement(sql);
-            puente.setString(1, vehPlaca);
-            puente.setString(2, datId);
-            puente.setString(3, catId);
-            puente.setString(4, vehModelo);
-            puente.setString(5, vehMarca);
-            puente.setString(6, vehEstado);
-            puente.setString(7, vehPrecio);
+            puente.setString(1, datId);
+            puente.setString(2, catId);
+            puente.setString(3, vehModelo);
+            puente.setString(4, vehMarca);
+            puente.setString(5, vehEstado);
+            puente.setString(6, vehPrecio);
+            puente.setString(7, vehPlaca);
             puente.executeUpdate();
             operacion = true;
        } catch (SQLException e) {

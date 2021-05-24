@@ -38,7 +38,7 @@ public class VehiculoControlador extends HttpServlet {
          String vehPlaca = request.getParameter("textPlaca");
          String datId= request.getParameter("textDatos");
          String catId= request.getParameter("textCategoria");
-         String vehModelo = request.getParameter("te xtModelo");
+         String vehModelo = request.getParameter("textModelo");
          String vehMarca = request.getParameter("textMarca");
          String vehEstado = request.getParameter("textEstado");
          String vehPrecio = request.getParameter("textPrecio");

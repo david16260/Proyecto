@@ -6,6 +6,7 @@
 
 <%@page import="ModeloVO.CategoriaVO"%>
 <%@page import="ModeloDAO.CategoriaDAO"%>
+<%@include file="Sesiones.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,17 +28,16 @@
                         CATEGORÍA<br>
                         <select name="textCategoria"> 
                             <option value="0">Seleccione...</option>
-                            <%
-                                CategoriaDAO catDAO = new CategoriaDAO();
-                                for(CategoriaVO catVO : catDAO.listar()){
-                                    
-                                
+                            <%                                CategoriaDAO catDAO = new CategoriaDAO();
+                                for (CategoriaVO catVO : catDAO.listar()) {
+
+
                             %>
                             <option value="<%=catVO.getCatId()%>"><%=catVO.getCatTipo()%></option>
                             <%
                                 }
                             %>
-                            
+
                         </select> <br><br>
                         MODELO<br>
                         <input type="text" name="textModelo"><br><br>
@@ -47,15 +47,15 @@
                         <input type="text" name="textEstado"><br><br>
                         PRECIO<br>
                         <input type="text" name="textPrecio"><br><br>
-                        
+
                     </th>
                 </tr>
             </table>
             <button>Registrar</button>
             <input type="hidden" value="1" name="opcion">      
         </form><br><br>
-        
-         <div>
+
+        <div>
             <% if (request.getAttribute("mensajeError") != null) {%>
             <div style="color: red;">
                 ${mensajeError}
@@ -66,8 +66,8 @@
             </div>
             <%}%>
         </div>
-        
-        
-        </center>
-    </body>
+
+
+    </center>
+</body>
 </html>

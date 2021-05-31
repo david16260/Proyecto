@@ -4,8 +4,11 @@
     Author     : Julian
 --%>
 
+<%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="Sesiones.jsp" %>
 <!DOCTYPE html>
+
 <html>
     <head>
         <link href="Css/Estilos.css" rel="stylesheet">
@@ -17,9 +20,19 @@
         <ul>
             <li><a href="registrarUsuario.jsp" class="btn-bk">Registrar usuario</a></li>
             <li><a href="consultarVehiculo.jsp" class="btn-bk">Consultar vehiculo</a></li>
-            <li><a href="index.jsp" class="btn-bk">Cerrar sesión</a></li>
           </ul>
       </nav>
-        <h1>Bienvenido!</h1>
+        <center>
+            
+            
+        
+        
+        
+        
+        </center>
+        <form method="post" action="Sesiones">
+            <input type="submit" value="Cerrar Sesión">
+            
+        </form>
     </body>
 </html>

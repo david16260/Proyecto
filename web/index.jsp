@@ -13,26 +13,26 @@
         <title>Iniciar Sesión</title>
     </head>
     <body>
-        <center>
-    <div class="login">
-        <h1 class="text-center text prymary">iniciar Sesión</h1>
-        <p class="text-center">Ingresa los datos con los que te has registrado para poder continuar</p>
-        
-        
-        
-        <form method="POST" action="Usuario">
-            <table>
-                <tr>
-                <label for="usu">Usuaurio</label><br>
-                <input type="text" name="txtUsuario" placeholder="Usuario" id="usu"  ><br><br>
-                <label for="pass">Contraseña</label><br>
-                <input type="password" name="txtPassword" placeholder="Contraseña" id="pass" ><br><br>
-                </tr>
-            </table>
-            <button class="btn">Ingresar</button>
-            <input type="hidden" value="3" name="opcion">
-        </form>
-     </div>
+    <center>
+        <div class="login">
+            <h1 class="text-center text prymary">iniciar Sesión</h1>
+            <p class="text-center">Ingresa los datos con los que te has registrado para poder continuar</p>
+
+
+
+            <form method="POST" action="Usuario">
+                <table>
+                    <tr>
+                    <label for="usu">Usuaurio</label><br>
+                    <input type="text" name="txtUsuario" placeholder="Usuario" id="usu"  ><br><br>
+                    <label for="pass">Contraseña</label><br>
+                    <input type="password" name="txtPassword" placeholder="Contraseña" id="pass" ><br><br>
+                    </tr>
+                </table>
+                <button class="btn">Ingresar</button>
+                <input type="hidden" value="3" name="opcion">
+            </form>
+        </div>
         <div>
             <% if (request.getAttribute("mensajeError") != null) {%>
             <div style="color: red;">
@@ -45,5 +45,5 @@
             <%}%>
         </div>
     </center>
-    </body>
+</body>
 </html>

@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -63,6 +64,11 @@ public class UsuarioControlador extends HttpServlet {
                 break;
             case 3://Iniciar Session
                 if (usuDAO.iniciarSesion(usuLogin, usuPassword)) {
+                    
+                    HttpSession miSesion = request.getSession(true);
+                    usuVO = new UsuarioVO(usuId, usuLogin, usuPassword);
+                    miSesion.setAttribute("datos", usuVO);
+                    
                    // request.setAttribute("mensajeExito", "El usuario se actualizo corectamente");
                    request.getRequestDispatcher("menu.jsp").forward(request, response);
                 } else {

@@ -8,6 +8,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+    response.setHeader("Pragma", "No-cache");
+    response.setHeader("Cache-cotrol", "no-cache,no-store,must-revalidate");
+    response.setDateHeader("Expires", 0);
+%>
+
+<%
     HttpSession buscarSesion = (HttpSession)request.getSession();
     String usuario="";
     

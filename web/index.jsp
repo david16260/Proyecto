@@ -23,7 +23,7 @@
             <form method="POST" action="Usuario">
                 <table>
                     <tr>
-                    <label for="usu">Usuaurio</label><br>
+                    <label for="usu">Usuario</label><br>
                     <input type="text" name="txtUsuario" placeholder="Usuario" id="usu"  ><br><br>
                     <label for="pass">Contraseña</label><br>
                     <input type="password" name="txtPassword" placeholder="Contraseña" id="pass" ><br><br>

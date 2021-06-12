@@ -1,12 +1,8 @@
-<%-- 
-    Document   : menu
-    Created on : 10-may-2021, 9:32:01
-    Author     : Julian
---%>
-
+<%@page import="java.util.ArrayList"%>
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Sesiones.jsp" %>
+<script src="Validaciones.js" type="text/javascript"></script>
 <!DOCTYPE html>
 
 <html>
@@ -22,14 +18,25 @@
             <li><a href="consultarVehiculo.jsp" class="btn-bk">Consultar vehiculo</a></li>
           </ul>
       </nav>
-        <center>
+        
+        <select onchange="redireccion(value)">
+            <option>Seleccione Rol...</option>
             
-            
+        <%
+        UsuarioVO usuVO = new UsuarioVO();
+        ArrayList<UsuarioVO> listaRoles=(ArrayList<UsuarioVO>)buscarSesion.getAttribute("roles");
+           for (int i = 0; i < listaRoles.size(); i++) {
+                        usuVO = listaRoles.get(i);
+           
         
+        %>
         
+        <option value="<%=usuVO.getRolTipo()%>"><%=usuVO.getRolTipo()%></option>
         
+        <% }%>
+        </select>   
         
-        </center>
+       
         <form method="post" action="Sesiones">
             <input type="submit" value="Cerrar Sesión">
             

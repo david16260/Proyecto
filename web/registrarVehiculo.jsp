@@ -4,7 +4,11 @@
     Author     : David
 --%>
 
+<%@page import="ModeloVO.DatosPVO"%>
+<%@page import="ModeloDAO.DatosDAO"%>
+<%@page import="ModeloDAO.VehiculoDAO"%>
 <%@page import="ModeloVO.CategoriaVO"%>
+<%@page import="ModeloVO.UsuarioVO"%>
 <%@page import="ModeloDAO.CategoriaDAO"%>
 <%@include file="Sesiones.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,7 +28,15 @@
                         PLACA<br>
                         <input type="text" name="textPlaca"><br><br>
                         DATOS<br>
-                        <input type="text" name="textDatos"><br><br>
+                        <select name="textDatos">
+                            <option value="0">Seleccione...</option>
+                            <%  DatosDAO datDAO = new DatosDAO();
+                                for (DatosPVO datVO : datDAO.listar()){
+                            %>
+                            
+                            <option value="<%=datVO.getDatId()%>"><%=datVO.getDatNombre()%></option>
+                            <%}%>
+                        </select><br><br>
                         CATEGORÍA<br>
                         <select name="textCategoria"> 
                             <option value="0">Seleccione...</option>

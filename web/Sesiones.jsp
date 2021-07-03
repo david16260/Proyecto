@@ -4,6 +4,7 @@
     Author     : David
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,10 +31,13 @@
 %>
 <html>
     <head>
+        <link rel="stylesheet" href="Css/Estilos.css">
+        <link rel="stylesheet" href="Css/sesiones.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Bienvenido: <%=usuario%></h1>
+         
+       
     </body>
 </html>

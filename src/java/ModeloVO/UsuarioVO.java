@@ -7,7 +7,7 @@ package ModeloVO;
 
 /**
  *
- * @author Julian
+ * @author David
  */
 public class UsuarioVO {
     
@@ -27,6 +27,8 @@ public class UsuarioVO {
         this.usulogin = usulogin;
         this.usuPassword = usuPassword;
     }
+
+    
 
     public String getUsuId() {
         return usuId;

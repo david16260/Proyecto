@@ -7,7 +7,7 @@ package Util;
 
 /**
  *
- * @author Julian
+ * @author David
  */
 public interface Crud {
     
@@ -15,3 +15,4 @@ public interface Crud {
     public abstract boolean actualizarRegistro();
     public abstract boolean eliminarRegistro();
 }
+

@@ -7,7 +7,7 @@
 
 <%@page import="ModeloVO.VehiculoVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Sesiones.jsp" %>
+<%@include file="sesionesVendedor.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,12 +17,26 @@
     <body>
     <center>
         <h1>ACTUALIZAR VEHÍCULO</h1>
+          <form method="POST" action="Vehiculo">
+            <table>
+                <tr>
+                    <th>
+                        PLACA
+                        <input type="text" name="textPlaca">
+                        <button>CONSULTAR</button>
+                    </th>
+                </tr>
+            </table><br><br>
+            <input type="hidden" value="3" name="opcion">
+        </form>
 
         <%            VehiculoVO vehVO = (VehiculoVO) request.getAttribute("vehiculo");
             if (vehVO != null) {
 
         %>
 
+        
+        
         <form method="post" action="Vehiculo">
             <table>
                 <tr>
@@ -51,7 +65,7 @@
 
         <%}%>
 
-        <a href="consultarVehiculo.jsp">Volver</a>
+        <a href="consultarVehiculo.jsp" class="btn-bk">Volver</a>
         <div>
             <% if (request.getAttribute("mensajeError") != null) {%>
             <div style="color: red;">

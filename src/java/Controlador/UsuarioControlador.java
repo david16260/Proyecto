@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Julian
+ * @author David
  */
 @WebServlet(name = "UsuarioControlador", urlPatterns = {"/Usuario"})
 public class UsuarioControlador extends HttpServlet {
@@ -41,11 +41,15 @@ public class UsuarioControlador extends HttpServlet {
         String usuId = request.getParameter("txtId");
         String usuLogin = request.getParameter("txtUsuario");
         String usuPassword = request.getParameter("txtPassword");
+        
+        
         int opcion = Integer.parseInt(request.getParameter("opcion"));
         //paso 2- instanciar VO
         UsuarioVO usuVO = new UsuarioVO(usuId, usuLogin, usuPassword);
+        
         //instanciar DAO
         UsuarioDAO usuDAO = new UsuarioDAO(usuVO);
+        
         
 
         switch (opcion) {
@@ -92,6 +96,7 @@ public class UsuarioControlador extends HttpServlet {
                       request.getRequestDispatcher("index.jsp").forward(request, response);
                       }
                 break;
+           
         }
     }
 

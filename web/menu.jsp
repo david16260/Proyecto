@@ -7,20 +7,15 @@
 
 <html>
     <head>
-        <link href="Css/Estilos.css" rel="stylesheet">
+       <link rel="stylesheet" href="Css/Estilos.css">
+        <link rel="stylesheet" href="Css/sesiones.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu</title>
     </head>
     <body>
        <nav>
         <ul>
-            <li><a href="registrarUsuario.jsp" class="btn-bk">Registrar usuario</a></li>
-            <li><a href="consultarVehiculo.jsp" class="btn-bk">Consultar vehiculo</a></li>
-            <li><a href="registrarVehiculo.jsp" class="btn-bk">Registrar vehiculo</a></li>
-          </ul>
-      </nav>
-        
-        <select onchange="redireccion(value)">
+            <li><select onchange="redireccion(value)" class="btn-bk">
             <option>Seleccione Rol...</option>
             
         <%
@@ -35,12 +30,13 @@
         <option value="<%=usuVO.getRolTipo()%>"><%=usuVO.getRolTipo()%></option>
         
         <% }%>
-        </select>   
+                </select></li>   
+            <li><form method="post" action="Sesiones">
+                    <input type="submit" value="Cerrar Sesión" class="btn-c">
+             </form></li>
+            <h1 class="bienvenido">Bienvenido:<%=usuario%></h1>
+          </ul>
+      </nav>
         
-       
-        <form method="post" action="Sesiones">
-            <input type="submit" value="Cerrar Sesión">
-            
-        </form>
     </body>
 </html>

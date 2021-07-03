@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Julian
+ * @author David
  */
 public class UsuarioDAO extends Conexion implements Crud {
 
@@ -27,6 +27,7 @@ public class UsuarioDAO extends Conexion implements Crud {
     private boolean operacion = false;
     private String sql;
     private String usuId = "", usulogin = "", usuPassword = "";
+    private String rolId = "", rolTipo = "";
 
     //Crear y conectarse al VO
     public UsuarioDAO(UsuarioVO usuVO) {
@@ -36,6 +37,8 @@ public class UsuarioDAO extends Conexion implements Crud {
             usuId = usuVO.getUsuId();
             usulogin = usuVO.getUsulogin();
             usuPassword = usuVO.getUsuPassword();
+            rolId = usuVO.getRolId();
+            rolTipo = usuVO.getRolTipo();
         } catch (Exception e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -61,6 +64,7 @@ public class UsuarioDAO extends Conexion implements Crud {
             }
         }
         return operacion;
+        
     }
 
     @Override
@@ -128,5 +132,6 @@ public class UsuarioDAO extends Conexion implements Crud {
         }
         return operacion;
     }
+   
     
 }

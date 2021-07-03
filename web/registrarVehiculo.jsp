@@ -10,7 +10,8 @@
 <%@page import="ModeloVO.CategoriaVO"%>
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page import="ModeloDAO.CategoriaDAO"%>
-<%@include file="Sesiones.jsp" %>
+<%@include file="comun.jsp" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,7 @@
                         PLACA<br>
                         <input type="text" name="textPlaca"><br><br>
                         DATOS<br>
-                        <select name="textDatos">
+                      <select name="textDatos">
                             <option value="0">Seleccione...</option>
                             <%  DatosDAO datDAO = new DatosDAO();
                                 for (DatosPVO datVO : datDAO.listar()){
